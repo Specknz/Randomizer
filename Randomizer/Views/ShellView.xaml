@@ -1,0 +1,103 @@
+﻿<Window x:Class="Randomizer.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Randomizer.Views"
+        mc:Ignorable="d"
+        Title="Randomizer"
+        Height="400"
+        Width="450"
+        Background="WhiteSmoke">
+    
+    <!-- STATIC RESOURCES-->
+    <Window.Resources>
+        <Thickness x:Key="stackPanelMargin">2</Thickness>
+    </Window.Resources>
+
+    
+    <Grid>
+        <!-- GRID DEFINITIONS -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="4">
+            <!-- FORMATTING RESOURCES -->
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin"
+                            Value="{StaticResource stackPanelMargin}" />
+                </Style>
+                <Style TargetType="{x:Type ItemsControl}">
+                    <Setter Property="Margin"
+                            Value="{StaticResource stackPanelMargin}" />
+                </Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin"
+                            Value="{StaticResource stackPanelMargin}" />
+                </Style>
+                <Style TargetType="{x:Type DataGrid}">
+                    <Setter Property="Margin"
+                            Value="{StaticResource stackPanelMargin}" />
+                </Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin"
+                            Value="{StaticResource stackPanelMargin}" />
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock Text="Lists:" 
+                       FontSize="20"
+                       FontWeight="Bold"/>
+            <!-- CHECKBOXES -->
+            <Border BorderBrush="Black"
+                    BorderThickness="1">
+                <ItemsControl ItemsSource="{Binding ListData}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"
+                                       Background="White"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="isSelected"
+                                      Content="{Binding ListName}"
+                                      IsChecked="{Binding IsSelected}"
+                                      Margin="5" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+
+
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="GenerateData"
+                        Content="Get Random Items"
+                        MinWidth="120"
+                        MaxWidth="155"
+                        HorizontalAlignment="Left" />
+            </StackPanel>
+            
+
+        </StackPanel>
+    </Grid>
+</Window>
