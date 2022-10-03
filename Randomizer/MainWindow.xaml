@@ -13,7 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="10" />
@@ -22,7 +22,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="200" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="10" />
@@ -50,7 +50,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <CheckBox x:Name="isSelected"
-                                      Content="{Binding ListName}"
+                                      Content="{Binding Name}"
                                       IsChecked="{Binding IsSelected}"
                                       Margin="5" />
                         </DataTemplate>
@@ -58,14 +58,28 @@
                 </ItemsControl>
             </Border>
 
+            
+
 
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="GenerateData"
+                <!--<Button x:Name="GenerateData"
+                        Click="GenerateData_Click"
                         Content="Get Random Items"
                         MinWidth="120"
                         MaxWidth="155"
-                        HorizontalAlignment="Left" />
+                        HorizontalAlignment="Left" />-->
             </StackPanel>
         </StackPanel>
+
+
+        <DataGrid 
+            ItemsSource="{Binding ListData}"
+            Grid.Row="2"
+            Grid.Column="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{Binding Name}" Binding="{Binding Items}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
     </Grid>
 </Window>

@@ -6,13 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Randomizer.DataAccess;
 using Randomizer.Models;
-using Randomizer.DataAccess;
+using System.Windows.Controls;
+using System.Data;
+using System.Data.Common;
 
 namespace Randomizer.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
         public ObservableCollection<ListData> ListData { get; }
+        public ObservableCollection<ListData> SelectedListData { get; set; }
+
         public MainViewModel()
         {
             ListData = new ObservableCollection<ListData>(DataAccessor.GetListsFromFiles());

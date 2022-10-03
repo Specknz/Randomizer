@@ -1,6 +1,10 @@
-﻿using Randomizer.ViewModels;
+﻿using Randomizer.DataAccess;
+using Randomizer.Models;
+using Randomizer.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +29,11 @@ namespace Randomizer
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+        }
+
+        private void GenerateData_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
