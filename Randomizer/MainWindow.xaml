@@ -70,11 +70,15 @@
                         HorizontalAlignment="Left" />-->
             </StackPanel>
         </StackPanel>
-
+  
         <DataGrid 
             ItemsSource="{Binding ListData}"
+            DataContext="{Binding}"
             Grid.Row="2"
             Grid.Column="2">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn
+            </DataGrid.Columns>
         </DataGrid>
 
     </Grid>
