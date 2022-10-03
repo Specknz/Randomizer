@@ -36,7 +36,7 @@
             <TextBlock Text="Lists:" 
                        FontSize="20"
                        FontWeight="Bold"/>
-            
+
             <!-- CHECKBOXES -->
             <Border BorderBrush="Black"
                     BorderThickness="1">
@@ -58,7 +58,7 @@
                 </ItemsControl>
             </Border>
 
-            
+
 
 
             <StackPanel Orientation="Horizontal">
@@ -71,15 +71,11 @@
             </StackPanel>
         </StackPanel>
 
-
         <DataGrid 
             ItemsSource="{Binding ListData}"
             Grid.Row="2"
             Grid.Column="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="{Binding Name}" Binding="{Binding Items}"/>
-            </DataGrid.Columns>
         </DataGrid>
-        
+
     </Grid>
 </Window>
