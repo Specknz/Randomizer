@@ -15,17 +15,10 @@ namespace Randomizer.ViewModels
     public class MainViewModel : ViewModelBase
     {
         public ObservableCollection<ListData> ListData { get; }
-        public ObservableCollection<ListData> SelectedListData { get; set; }
-        public string someString = "Hello World";
-        public DataGrid myDataGrid { get; set; }
 
         public MainViewModel()
         {
             ListData = new ObservableCollection<ListData>(DataAccessor.GetListsFromFiles());
-            DataGridTextColumn dgtc = new();
-            dgtc.Header = "Text";
-
-            myDataGrid.Columns.Add(dgtc);
         }
     }
 }
