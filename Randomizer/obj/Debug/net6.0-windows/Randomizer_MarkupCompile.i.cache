@@ -1,20 +1,20 @@
 ﻿Randomizer
-
+1.0.0.0
 
 winexe
 C#
 .cs
 C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug\net6.0-windows\
-Randomizer_tgtuvyui_wpftmp
+Randomizer
 none
 false
-TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\App.xaml
 2-96019324
 
-10-634487387
-3882087237404
+10-1170960623
+194-1103864946
 MainWindow.xaml;Styles\Styles.xaml;
 
-True
+False
 

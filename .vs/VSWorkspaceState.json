@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Randomizer"
+    "\\Randomizer",
+    "\\Randomizer\\ViewModels"
   ],
   "SelectedNode": "\\Randomizer.sln",
   "PreviewInSolutionExplorer": false
