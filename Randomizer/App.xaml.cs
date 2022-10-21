@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Randomizer.Stores;
+using Randomizer.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,26 @@ namespace Randomizer
     /// </summary>
     public partial class App : Application
     {
+        private readonly CurrentViewModelStore _currentViewModelStore;
+
+
+        public App()
+        {
+            _currentViewModelStore = new();
+        }
+
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            _currentViewModelStore.CurrentViewModel = new MainViewModel();
+
+            MainWindow = new MainWindow()
+            {
+                DataContext = _currentViewModelStore.CurrentViewModel
+            };
+            MainWindow.Show();
+
+            base.OnStartup(e);
+        }
     }
 }

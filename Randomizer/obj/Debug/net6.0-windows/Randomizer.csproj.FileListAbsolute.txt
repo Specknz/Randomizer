@@ -25,3 +25,6 @@ C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug
 C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug\net6.0-windows\Randomizer.genruntimeconfig.cache
 C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug\net6.0-windows\ref\Randomizer.dll
 C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug\net6.0-windows\Randomizer.csproj.ResolveComReference.cache
+C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug\net6.0-windows\Views\MainView.g.cs
+C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Steve\Documents\Development\C#\Projects\Randomizer\Randomizer\obj\Debug\net6.0-windows\Views\MainView.baml

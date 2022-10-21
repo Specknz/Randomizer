@@ -4,103 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Randomizer"
+        xmlns:viewModels="clr-namespace:Randomizer.ViewModels"
+        xmlns:views="clr-namespace:Randomizer.Views"
         mc:Ignorable="d"
         Title="MainWindow" 
         MinHeight="350" 
         MinWidth="350"
         Height="350"
         Width="350">
-    <Grid>
-        <!-- GRID DEFINITIONS -->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="10" />
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="10" />
-        </Grid.RowDefinitions>
-
-        <StackPanel Orientation="Vertical"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="4">
-
-            <TextBlock Text="Lists:" 
-                       FontSize="20"
-                       FontWeight="Bold"/>
-
-            <!-- CHECKBOXES -->
-            <Border BorderBrush="Black"
-                    BorderThickness="1">
-                <ItemsControl ItemsSource="{Binding ListData}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal"
-                                       Background="White"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox x:Name="isSelected"
-                                      Content="{Binding Name}"
-                                      IsChecked="{Binding IsSelected}"
-                                      Margin="5" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </Border>
-        </StackPanel>
-
-
-        <Border Grid.Row="2"
-                Grid.Column="2"
-                Grid.ColumnSpan="4">
-            <ItemsControl ItemsSource="{Binding ListData}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="0 2 0 2">
-                            <Border BorderBrush="Black"
-                                    BorderThickness="0 0 0 1">
-                                <Label Content="{Binding Name}"/>
-                            </Border>
-                            <ListView ItemsSource="{Binding Items}"
-                                      BorderThickness="0">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding}"/>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </Border>
-
-        <Button x:Name="GenerateData"
-                Grid.Row="3"
-                Grid.Column="2"
-                Click="GenerateData_Click"
-                Content="Generate"
-                MinWidth="75"
-                MaxWidth="100"
-                HorizontalAlignment="Left" 
-                Margin="0 5 5 5"/>
-
-    </Grid>
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
+                <views:MainView />
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
 </Window>

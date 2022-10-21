@@ -25,17 +25,9 @@ namespace Randomizer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainViewModel _mainViewModel;
         public MainWindow()
         {
             InitializeComponent();
-            _mainViewModel = new MainViewModel();
-            DataContext = _mainViewModel;
-        }
-
-        private void GenerateData_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

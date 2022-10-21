@@ -10,18 +10,20 @@ namespace Randomizer.DataAccess
 {
     internal static class ListFileLoader
     {
-        private static string[] _listFileNames = GetListFileNames();
+        private static IEnumerable<string> _listFileNames = GetListFileNames();
         private static List<ListData> _list = new();
 
         public static IEnumerable<ListData> GetAllLists()
         {
             foreach (string listFile in _listFileNames)
+            {
                 AddList(listFile);
+            }
 
             return _list;
         }
 
-        private static string[] GetListFileNames()
+        private static IEnumerable<string> GetListFileNames()
         {
             string listsRootPath = Path.Combine(Directory.GetCurrentDirectory(), "Lists");
             return Directory.GetFiles(listsRootPath);

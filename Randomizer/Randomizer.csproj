@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Lists\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>

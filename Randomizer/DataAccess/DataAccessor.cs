@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Randomizer.DataAccess
 {
-    public class DataAccessor
+    public class ListDataAccessor
     {
         public static IEnumerable<ListData> GetListsFromFiles()
         {
