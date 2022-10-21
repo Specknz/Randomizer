@@ -10,7 +10,7 @@ namespace Randomizer.ViewModels
 {
     public class ListDataViewModel : ViewModelBase
     {
-        private readonly ListData _listData;
+        private ListData _listData;
         public string Name => _listData.Name;
         public IEnumerable<string> Items => _listData.Items;
         public bool IsSelected => _listData.IsSelected;

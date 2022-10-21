@@ -17,18 +17,34 @@ namespace Randomizer.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private readonly ListDataViewModel _listDataViewModel;
+        private readonly ListDataStore _listDataStore;
+        public ObservableCollection<ListDataViewModel> ListData { get; } = new();
+
         private readonly CurrentViewModelStore _currentViewModelStore;
         public ViewModelBase CurrentViewModel => _currentViewModelStore.CurrentViewModel;   
 
         public ICommand GenerateData;
 
-        public MainViewModel(CurrentViewModelStore currentViewModelStore)
+        public MainViewModel(CurrentViewModelStore currentViewModelStore, ListDataStore listDataStore)
         {
             _currentViewModelStore = currentViewModelStore;
+            _listDataStore = listDataStore;
             GenerateData = new GenerateDataCommand();
 
             _currentViewModelStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+
+            UpdateListData();
+        }
+
+        private void UpdateListData()
+        {
+            ListData.Clear();
+
+            foreach (var list in _listDataStore.GetAllListsData())
+            {
+                if (list.IsSelected)
+                    ListData.Add(new ListDataViewModel(list));
+            }
         }
 
         private void OnCurrentViewModelChanged()

@@ -13,7 +13,7 @@ namespace Randomizer.DataAccess
         private static IEnumerable<string> _listFileNames = GetListFileNames();
         private static List<ListData> _list = new();
 
-        public static IEnumerable<ListData> GetAllLists()
+        public static List<ListData> GetAllLists()
         {
             foreach (string listFile in _listFileNames)
             {

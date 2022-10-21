@@ -16,17 +16,19 @@ namespace Randomizer
     public partial class App : Application
     {
         private readonly CurrentViewModelStore _currentViewModelStore;
+        private readonly ListDataStore _listDataStore;
 
 
         public App()
         {
             _currentViewModelStore = new();
+            _listDataStore = new();
         }
 
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            _currentViewModelStore.CurrentViewModel = new MainViewModel(_currentViewModelStore);
+            _currentViewModelStore.CurrentViewModel = new MainViewModel(_currentViewModelStore, _listDataStore);
 
             MainWindow = new MainWindow()
             {
