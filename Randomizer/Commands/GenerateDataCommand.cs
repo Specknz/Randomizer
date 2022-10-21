@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Randomizer.Commands
 {
@@ -21,7 +22,7 @@ namespace Randomizer.Commands
 
         public override void Execute(object? parameter)
         {
-            
+
         }
     }
 }
