@@ -19,11 +19,5 @@ namespace Randomizer.ViewModels
         {
             _listData = listData;
         }
-
-        public void IsSelectedChanged()
-        {
-            _listData.IsSelected = false;
-        }
-
     }
 }

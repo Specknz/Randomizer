@@ -25,7 +25,6 @@ namespace Randomizer.ViewModels
 
         public MainViewModel(CurrentViewModelStore currentViewModelStore)
         {
-            _listDataViewModel = new ListDataViewModel();
             _currentViewModelStore = currentViewModelStore;
             GenerateData = new GenerateDataCommand();
 
@@ -36,5 +35,7 @@ namespace Randomizer.ViewModels
         {
             OnPropertyChanged(nameof(CurrentViewModel));
         }
+
+
     }
 }

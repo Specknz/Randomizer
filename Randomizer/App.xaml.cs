@@ -26,7 +26,7 @@ namespace Randomizer
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            _currentViewModelStore.CurrentViewModel = new MainViewModel();
+            _currentViewModelStore.CurrentViewModel = new MainViewModel(_currentViewModelStore);
 
             MainWindow = new MainWindow()
             {
