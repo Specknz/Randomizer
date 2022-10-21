@@ -17,8 +17,8 @@ namespace Randomizer.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private readonly ListDataStore _listDataStore;
-        public ObservableCollection<ListDataViewModel> ListData { get; } = new();
+        private ListDataStore _listDataStore;
+        public ObservableCollection<ListDataViewModel> ListData { get; set; }
 
         private readonly CurrentViewModelStore _currentViewModelStore;
         public ViewModelBase CurrentViewModel => _currentViewModelStore.CurrentViewModel;   
@@ -29,7 +29,8 @@ namespace Randomizer.ViewModels
         {
             _currentViewModelStore = currentViewModelStore;
             _listDataStore = listDataStore;
-            GenerateData = new GenerateDataCommand();
+            ListData = new();
+            GenerateData = new GenerateDataCommand(this, listDataStore);
 
             _currentViewModelStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
 
@@ -43,7 +44,9 @@ namespace Randomizer.ViewModels
             foreach (var list in _listDataStore.GetAllListsData())
             {
                 if (list.IsSelected)
+                {
                     ListData.Add(new ListDataViewModel(list));
+                }
             }
         }
 
@@ -51,7 +54,5 @@ namespace Randomizer.ViewModels
         {
             OnPropertyChanged(nameof(CurrentViewModel));
         }
-
-
     }
 }

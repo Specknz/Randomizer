@@ -11,6 +11,7 @@ namespace Randomizer.Stores
     public class ListDataStore
     {
         private List<ListData> _listData;
+        public event Action ListDataChanged;
 
         public ListDataStore()
         {
@@ -20,6 +21,11 @@ namespace Randomizer.Stores
         public IEnumerable<ListData> GetAllListsData()
         {
             return _listData;
+        }
+
+        public void OnListDataChanged()
+        {
+            ListDataChanged?.Invoke();
         }
     }
 }

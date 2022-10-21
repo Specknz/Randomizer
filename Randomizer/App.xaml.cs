@@ -16,7 +16,7 @@ namespace Randomizer
     public partial class App : Application
     {
         private readonly CurrentViewModelStore _currentViewModelStore;
-        private readonly ListDataStore _listDataStore;
+        private ListDataStore _listDataStore;
 
 
         public App()
