@@ -12,7 +12,7 @@ namespace Randomizer.ViewModels
     {
         private ListData _listData;
         public string Name => _listData.Name;
-        public IEnumerable<string> Items => _listData.Items;
+        public List<string> Items => _listData.Items;
         public bool IsSelected
         {
             get => _listData.IsSelected;

@@ -8,8 +8,8 @@ namespace Randomizer.Models
 {
     public sealed class ListData
     {
-        public string Name { get; init; }
-        public IEnumerable<string> Items { get; init; }
+        public string Name { get; set; }
+        public List<string> Items { get; set; }
         public bool IsSelected { get; set; }
     }
 }

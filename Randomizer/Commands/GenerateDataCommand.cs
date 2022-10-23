@@ -1,4 +1,5 @@
-﻿using Randomizer.Stores;
+﻿using Randomizer.Factories;
+using Randomizer.Stores;
 using Randomizer.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace Randomizer.Commands
 
         public override void Execute(object? parameter)
         {
-
+            DisplayListDataFactory.GenerateRandomItems(_mainViewModel);
         }
     }
 }

@@ -60,35 +60,6 @@
                 </Border>
             </StackPanel>
 
-            <StackPanel Grid.Row="2"
-                        Grid.Column="1"
-                        Grid.ColumnSpan="4"
-                        Orientation="Horizontal"
-                        VerticalAlignment="Bottom"
-                        HorizontalAlignment="Left">
-
-                <CheckBox Grid.Row="4"
-                          Grid.Column="1"
-                          Content="Allow Duplicates"
-                          IsChecked="{Binding Path=AllowDuplicateListItems}"
-                          Margin="5 5 5 0"
-                          HorizontalAlignment="Left"
-                          VerticalAlignment="Center"/>
-
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Bottom">
-
-                    <Label Content="Number of Items: "
-                           Margin="5 5 5 0"
-                           VerticalAlignment="Center"/>
-                    <TextBox Width="35"
-                         Height="18"
-                         Margin="5 5 5 0"/>
-
-                </StackPanel>
-            </StackPanel>
-
-
             <Border Grid.Row="3"
                 Grid.Column="1"
                 Grid.ColumnSpan="4">
@@ -119,15 +90,36 @@
                 </ItemsControl>
             </Border>
 
+            <CheckBox Grid.Row="5"
+                      Grid.Column="1"
+                      Content="Allow Duplicates"
+                      IsChecked="{Binding Path=AllowDuplicateListItems}"
+                      Margin="5 5 5 5"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="5"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom">
+                <Label Content="Number of Items:"
+                       Margin="5 5 0 0"
+                       VerticalAlignment="Center"/>
+                <TextBox Width="35"
+                         Height="18"
+                         Margin="0 5 5 0"/>
+            </StackPanel>
+
             <Button Command="{Binding GenerateData}"
-                    Grid.Row="5"
-                    Grid.Column="4"
-                    Content="Generate"
-                    MinWidth="75"
-                    MaxWidth="100"
-                    HorizontalAlignment="Right" 
-                    VerticalAlignment="Bottom"
-                    Margin="5 5 5 5"/>
+                Grid.Row="5"
+                Grid.Column="4"
+                Content="Generate"
+                MinWidth="75"
+                MaxWidth="100"
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Bottom"
+                Margin="5 5 5 5"/>
         </Grid>
     </Grid>
 </UserControl>

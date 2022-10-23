@@ -40,7 +40,7 @@ namespace Randomizer.DataAccess
             });
         }
 
-        private static IEnumerable<string> GetListItems(string list)
+        private static List<string> GetListItems(string list)
         {
             List<string> listItems = new();
 
