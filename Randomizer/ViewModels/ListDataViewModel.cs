@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Randomizer.ViewModels
 {
-    public class ListDataViewModel : ViewModelBase
+    public sealed class ListDataViewModel : ViewModelBase
     {
         private ListData _listData;
         public string Name => _listData.Name;

@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 namespace Randomizer.Commands
 {
-    public class GenerateDataCommand : CommandBase
+    public sealed class GenerateDataCommand : CommandBase
     {
         private ListDataStore _listDataStore;
         private MainViewModel _mainViewModel;

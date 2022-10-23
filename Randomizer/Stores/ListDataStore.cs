@@ -8,24 +8,18 @@ using System.Threading.Tasks;
 
 namespace Randomizer.Stores
 {
-    public class ListDataStore
+    public sealed class ListDataStore
     {
         private List<ListData> _listData;
-        public event Action ListDataChanged;
 
         public ListDataStore()
         {
-            _listData = ListFileLoader.GetAllLists();
+            _listData = ListFileLoader.LoadListData();
         }
 
-        public IEnumerable<ListData> GetAllListsData()
+        public IEnumerable<ListData> GetLists()
         {
             return _listData;
-        }
-
-        public void OnListDataChanged()
-        {
-            ListDataChanged?.Invoke();
         }
     }
 }

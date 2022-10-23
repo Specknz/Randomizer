@@ -13,7 +13,7 @@ namespace Randomizer.DataAccess
         private static IEnumerable<string> _listFileNames = GetListFileNames();
         private static List<ListData> _list = new();
 
-        public static List<ListData> GetAllLists()
+        public static List<ListData> LoadListData()
         {
             foreach (string listFile in _listFileNames)
             {
@@ -36,7 +36,7 @@ namespace Randomizer.DataAccess
             {
                 Name = Path.GetFileNameWithoutExtension(listFile),
                 Items = GetListItems(listFile),
-                IsSelected = true
+                IsSelected = false
             });
         }
 

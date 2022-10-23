@@ -15,21 +15,22 @@ using Randomizer.Stores;
 
 namespace Randomizer.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public sealed class MainViewModel : ViewModelBase
     {
-        private ListDataStore _listDataStore;
-        public ObservableCollection<ListDataViewModel> ListData { get; set; }
-
         private readonly CurrentViewModelStore _currentViewModelStore;
+        private ListDataStore _listDataStore;
+        public bool AllowDuplicateListItems { get; set; }
+        public int NumberOfListItemsToDisplay { get; set; }
+        public ObservableCollection<ListDataViewModel> DisplayListData { get; set; }
         public ViewModelBase CurrentViewModel => _currentViewModelStore.CurrentViewModel;   
 
-        public ICommand GenerateData;
+        public ICommand GenerateData { get; }
 
         public MainViewModel(CurrentViewModelStore currentViewModelStore, ListDataStore listDataStore)
         {
             _currentViewModelStore = currentViewModelStore;
             _listDataStore = listDataStore;
-            ListData = new();
+            DisplayListData = new();
             GenerateData = new GenerateDataCommand(this, listDataStore);
 
             _currentViewModelStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
@@ -39,13 +40,13 @@ namespace Randomizer.ViewModels
 
         private void UpdateListData()
         {
-            ListData.Clear();
+            DisplayListData.Clear();
 
-            foreach (var list in _listDataStore.GetAllListsData())
+            foreach (var list in _listDataStore.GetLists())
             {
                 if (list.IsSelected)
                 {
-                    ListData.Add(new ListDataViewModel(list));
+                    DisplayListData.Add(new ListDataViewModel(list));
                 }
             }
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Randomizer.Stores
 {
-    public class CurrentViewModelStore 
+    public sealed class CurrentViewModelStore 
     {
         private ViewModelBase _currentViewModel;
 

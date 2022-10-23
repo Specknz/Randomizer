@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Randomizer",
+    "\\Randomizer\\Commands",
     "\\Randomizer\\ViewModels"
   ],
-  "SelectedNode": "\\Randomizer.sln",
+  "SelectedNode": "\\Randomizer\\Commands\\GenerateDataCommand.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Randomizer.Models
 {
-    public class ListData
+    public sealed class ListData
     {
         public string Name { get; init; }
         public IEnumerable<string> Items { get; init; }
