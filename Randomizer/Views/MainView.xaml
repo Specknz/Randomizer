@@ -41,7 +41,7 @@
                 <!-- CHECKBOXES -->
                 <Border BorderBrush="Black"
                     BorderThickness="1">
-                    <ItemsControl ItemsSource="{Binding DisplayListData}">
+                    <ItemsControl ItemsSource="{Binding ListDataSelectors}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal"
@@ -60,11 +60,39 @@
                 </Border>
             </StackPanel>
 
+            <StackPanel Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="4"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left">
 
-            <Border Grid.Row="2"
+                <CheckBox Grid.Row="4"
+                          Grid.Column="1"
+                          Content="Allow Duplicates"
+                          IsChecked="{Binding Path=AllowDuplicateListItems}"
+                          Margin="5 5 5 0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Bottom">
+
+                    <Label Content="Number of Items: "
+                           Margin="5 5 5 0"
+                           VerticalAlignment="Center"/>
+                    <TextBox Width="35"
+                         Height="18"
+                         Margin="5 5 5 0"/>
+
+                </StackPanel>
+            </StackPanel>
+
+
+            <Border Grid.Row="3"
                 Grid.Column="1"
                 Grid.ColumnSpan="4">
-                <ItemsControl ItemsSource="{Binding DisplayListData}">
+                <ItemsControl ItemsSource="{Binding ListDataItems}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>
@@ -91,31 +119,15 @@
                 </ItemsControl>
             </Border>
 
-            <Button Grid.Row="3"
-                    Grid.Column="1"
-                    Command="{Binding GenerateData}"
+            <Button Command="{Binding GenerateData}"
+                    Grid.Row="5"
+                    Grid.Column="4"
                     Content="Generate"
                     MinWidth="75"
                     MaxWidth="100"
-                    HorizontalAlignment="Left" 
-                    Margin="0 5 5 5"/>
-
-            <Label Content="Number of Items: "
-                   Grid.Row="3"
-                   Grid.Column="2"/>
-            <TextBox Grid.Row="3"
-                     Grid.Column="3"
-                     Width="35"
-                     Height="20"
-                     HorizontalContentAlignment="Center"/>
-
-            <CheckBox Grid.Row="4"
-                      Grid.Column="1"
-                      Content="Allow Duplicates"
-                      IsChecked="{Binding Path=AllowDuplicateListItems}"
-                      Margin="0 5 5 5"/>
-
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Bottom"
+                    Margin="5 5 5 5"/>
         </Grid>
-
     </Grid>
 </UserControl>
