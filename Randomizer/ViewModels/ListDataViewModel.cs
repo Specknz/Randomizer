@@ -1,18 +1,19 @@
 ﻿using Randomizer.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Randomizer.ViewModels
 {
     public sealed class ListDataViewModel : ViewModelBase
     {
-        private ListData _listData;
+        public ListData _listData;
         public string Name => _listData.Name;
-        public List<string> Items => _listData.Items;
+
+        public List<string> Items
+        {
+            get => _listData.Items;
+            set => _listData.Items = value;
+        }
+
         public bool IsSelected
         {
             get => _listData.IsSelected;

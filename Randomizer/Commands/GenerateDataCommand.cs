@@ -23,7 +23,7 @@ namespace Randomizer.Commands
 
         public override void Execute(object? parameter)
         {
-            DisplayListDataFactory.GenerateRandomItems(_mainViewModel);
+            ListDataFactory.GenerateRandomItems(_mainViewModel);
         }
     }
 }

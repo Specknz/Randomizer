@@ -17,7 +17,7 @@ namespace Randomizer.Stores
             _listData = ListFileLoader.LoadListData();
         }
 
-        public IEnumerable<ListData> GetLists()
+        public List<ListData> GetLists()
         {
             return _listData;
         }

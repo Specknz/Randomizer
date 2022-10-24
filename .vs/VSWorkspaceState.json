@@ -3,7 +3,8 @@
     "",
     "\\Randomizer",
     "\\Randomizer\\Commands",
-    "\\Randomizer\\ViewModels"
+    "\\Randomizer\\ViewModels",
+    "\\Randomizer\\Views"
   ],
   "SelectedNode": "\\Randomizer.sln",
   "PreviewInSolutionExplorer": false
