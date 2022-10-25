@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace Randomizer.DataAccess
 {
-    internal static class ListFileLoader
+    public static class ListFileLoader
     {
-        private static IEnumerable<string> _listFileNames = GetListFileNames();
-        private static List<ListData> _list = new();
-
-        public static List<ListData> LoadListData()
+        public static IEnumerable<ListData> LoadListData()
         {
-            foreach (string listFile in _listFileNames)
+            IEnumerable<string> listFileNames = GetListFileNames();
+            List<ListData> list = new();
+
+            foreach (string listFileName in listFileNames)
             {
-                AddList(listFile);
+                AddList(listFileName, list);
             }
 
-            return _list;
+            return list;
         }
 
         private static IEnumerable<string> GetListFileNames()
@@ -30,17 +30,17 @@ namespace Randomizer.DataAccess
 
         }
 
-        private static void AddList(string listFile)
+        private static void AddList(string listFileName, List<ListData> list)
         {
-            _list.Add(new ListData
+            list.Add(new ListData
             {
-                Name = Path.GetFileNameWithoutExtension(listFile),
-                Items = GetListItems(listFile),
+                Name = Path.GetFileNameWithoutExtension(listFileName),
+                Items = GetListItems(listFileName),
                 IsSelected = false
             });
         }
 
-        private static List<string> GetListItems(string list)
+        private static IEnumerable<string> GetListItems(string list)
         {
             List<string> listItems = new();
 

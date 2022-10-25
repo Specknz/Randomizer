@@ -3,6 +3,7 @@
     "",
     "\\Randomizer",
     "\\Randomizer\\Commands",
+    "\\Randomizer\\Factories",
     "\\Randomizer\\ViewModels",
     "\\Randomizer\\Views"
   ],

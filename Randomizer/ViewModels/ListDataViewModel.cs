@@ -5,14 +5,10 @@ namespace Randomizer.ViewModels
 {
     public sealed class ListDataViewModel : ViewModelBase
     {
-        public ListData _listData;
-        public string Name => _listData.Name;
+        private readonly ListData _listData;
 
-        public List<string> Items
-        {
-            get => _listData.Items;
-            set => _listData.Items = value;
-        }
+        public string Name => _listData.Name;
+        public IEnumerable<string> Items => _listData.Items;
 
         public bool IsSelected
         {

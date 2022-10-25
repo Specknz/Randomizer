@@ -13,11 +13,11 @@ namespace Randomizer.Factories
 {
     public static class ListDataFactory
     {
-        private static Random random = new();
+        private static Random _random = new();
 
         public static void GenerateRandomItems(MainViewModel mainViewModel)
         {
-            mainViewModel.ListDataItems.Clear();
+            mainViewModel.ListDataDisplayItems.Clear();
 
             foreach (ListDataViewModel list in mainViewModel.ListDataSelectors)
             {
@@ -34,7 +34,7 @@ namespace Randomizer.Factories
 
             List<string> randomisedList = AddRandomItems(mainViewModel, extractedListItems);
 
-            mainViewModel.ListDataItems.Add(new ListDataViewModel(new ListData { Name = list.Name, Items = randomisedList}));
+            mainViewModel.ListDataDisplayItems.Add(new ListDataViewModel(new ListData { Name = list.Name, Items = randomisedList}));
         }
 
         private static List<string> ExtractListItems(List<string> listItemsToBeExtracted)
@@ -55,7 +55,7 @@ namespace Randomizer.Factories
 
             for (int i = 0; i < mainViewModel.NumberOfListItemsToDisplay; i++)
             {
-                string randomListItem = extractedListItems[random.Next(extractedListItems.Count)];
+                string randomListItem = extractedListItems[_random.Next(extractedListItems.Count)];
                 randomizedListItem.Add(randomListItem);
             }
 

@@ -63,7 +63,7 @@
             <Border Grid.Row="3"
                 Grid.Column="1"
                 Grid.ColumnSpan="4">
-                <ItemsControl ItemsSource="{Binding ListDataItems}">
+                <ItemsControl ItemsSource="{Binding ListDataDisplayItems}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal"/>

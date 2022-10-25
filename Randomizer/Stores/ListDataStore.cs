@@ -10,14 +10,14 @@ namespace Randomizer.Stores
 {
     public sealed class ListDataStore
     {
-        private List<ListData> _listData;
+        private IEnumerable<ListData> _listData;
 
         public ListDataStore()
         {
             _listData = ListFileLoader.LoadListData();
         }
 
-        public List<ListData> GetLists()
+        public IEnumerable<ListData> GetLists()
         {
             return _listData;
         }

@@ -18,12 +18,15 @@ namespace Randomizer.ViewModels
     public sealed class MainViewModel : ViewModelBase
     {
         private readonly CurrentViewModelStore _currentViewModelStore;
-        private ListDataStore _listDataStore;
+        private readonly ListDataStore _listDataStore;
+
         public bool AllowDuplicateListItems { get; set; } = true;
         public int NumberOfListItemsToDisplay { get; set; } = 4;
-        public ObservableCollection<ListDataViewModel> ListDataSelectors { get; set; }
-        public ObservableCollection<ListDataViewModel> ListDataItems { get; set; }
-        public ViewModelBase CurrentViewModel => _currentViewModelStore.CurrentViewModel;   
+
+        public List<ListDataViewModel> ListDataSelectors { get; }
+        public ObservableCollection<ListDataViewModel> ListDataDisplayItems { get; set; }
+
+        public ViewModelBase CurrentViewModel => _currentViewModelStore.CurrentViewModel;
 
         public ICommand GenerateData { get; }
 
@@ -35,7 +38,7 @@ namespace Randomizer.ViewModels
             GenerateData = new GenerateDataCommand(this, listDataStore);
 
             ListDataSelectors = new();
-            ListDataItems = new();
+            ListDataDisplayItems = new();
 
             _currentViewModelStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
 
