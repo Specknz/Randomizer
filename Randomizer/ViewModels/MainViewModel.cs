@@ -35,7 +35,7 @@ namespace Randomizer.ViewModels
             _currentViewModelStore = currentViewModelStore;
             _listDataStore = listDataStore;
 
-            GenerateData = new GenerateDataCommand(this, listDataStore);
+            GenerateData = new GenerateDataCommand(this);
 
             ListDataSelectors = new();
             ListDataDisplayItems = new();

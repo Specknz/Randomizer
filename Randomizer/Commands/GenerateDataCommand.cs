@@ -12,12 +12,10 @@ namespace Randomizer.Commands
 {
     public sealed class GenerateDataCommand : CommandBase
     {
-        private readonly ListDataStore _listDataStore;
         private readonly MainViewModel _mainViewModel;
 
-        public GenerateDataCommand(MainViewModel mainViewModel, ListDataStore listDataStore)
+        public GenerateDataCommand(MainViewModel mainViewModel)
         {
-            _listDataStore = listDataStore;
             _mainViewModel = mainViewModel; 
         }
 

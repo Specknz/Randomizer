@@ -34,14 +34,19 @@ namespace Randomizer.Factories
 
             List<string> randomisedList = AddRandomItems(mainViewModel, extractedListItems);
 
-            mainViewModel.ListDataDisplayItems.Add(new ListDataViewModel(new ListData { Name = list.Name, Items = randomisedList}));
+            mainViewModel.ListDataDisplayItems.Add(new ListDataViewModel(
+                new ListData 
+                { 
+                    Name = list.Name, 
+                    Items = randomisedList
+                }));
         }
 
         private static List<string> ExtractListItems(List<string> listItemsToBeExtracted)
         {
             List<string> extractedItems = new();
 
-            foreach(string item in listItemsToBeExtracted)
+            foreach (string item in listItemsToBeExtracted)
             {
                 extractedItems.Add(item);
             }
