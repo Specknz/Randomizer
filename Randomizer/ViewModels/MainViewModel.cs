@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Randomizer.DataAccess;
-using Randomizer.Models;
-using System.Windows.Controls;
-using System.Data;
-using System.Data.Common;
 using System.Windows.Input;
 using Randomizer.Commands;
 using Randomizer.Stores;
+using System.Windows;
 
 namespace Randomizer.ViewModels
 {
@@ -21,7 +13,23 @@ namespace Randomizer.ViewModels
         private readonly ListDataStore _listDataStore;
 
         public bool AllowDuplicateListItems { get; set; } = true;
-        public int NumberOfListItemsToDisplay { get; set; } = 4;
+        private int _numberOfListItemsToDisplay = 1;
+        public int NumberOfListItemsToDisplay
+        {
+            get => _numberOfListItemsToDisplay;
+            set
+            {
+                try
+                {
+                    _numberOfListItemsToDisplay = value;
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter a valid value for number of results.", "Value error",
+                        MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
+        }
 
         public List<ListDataViewModel> ListDataSelectors { get; }
         public ObservableCollection<ListDataViewModel> ListDataDisplayItems { get; set; }

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Randomizer.Views"
              mc:Ignorable="d"
-             d:DesignHeight="350" d:DesignWidth="400"
+             d:DesignHeight="400" d:DesignWidth="400"
              Background="WhiteSmoke">
     <Grid>
         <Grid>
@@ -108,7 +108,10 @@
                        VerticalAlignment="Center"/>
                 <TextBox Width="35"
                          Height="18"
-                         Margin="0 5 5 0"/>
+                         Margin="0 5 5 0"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         Text="{Binding NumberOfListItemsToDisplay}"/>
             </StackPanel>
 
             <Button Command="{Binding GenerateData}"
