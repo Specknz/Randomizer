@@ -3,17 +3,24 @@ using Randomizer.Stores;
 using Randomizer.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Dynamic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 
 namespace Randomizer.Factories
 {
     public static class ListDataFactory
     {
         private static Random _random = new();
+
+        public static void GetListData(List<ListDataViewModel> listOfListData, ListDataStore listDataStore)
+        {
+            listOfListData.Clear();
+
+            foreach (var list in listDataStore.GetLists())
+            {
+                listOfListData.Add(new ListDataViewModel(list));
+            }
+        }
 
         public static void GenerateRandomItems(MainViewModel mainViewModel)
         {

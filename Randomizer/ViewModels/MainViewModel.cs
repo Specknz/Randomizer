@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Randomizer.Commands;
 using Randomizer.Stores;
 using System.Windows;
+using Randomizer.Factories;
 
 namespace Randomizer.ViewModels
 {
@@ -50,18 +51,9 @@ namespace Randomizer.ViewModels
 
             _currentViewModelStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
 
-            GetListDataSelectors();
+            ListDataFactory.GetListData(ListDataSelectors, _listDataStore);
         }
 
-        private void GetListDataSelectors()
-        {
-            ListDataSelectors.Clear();
-
-            foreach (var list in _listDataStore.GetLists())
-            {
-                ListDataSelectors.Add(new ListDataViewModel(list));
-            }
-        }
 
         private void OnCurrentViewModelChanged()
         {
